@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package flipkart.events;
+
+option java_package = "com.flipkart.events";
+
+
+message Event {
+  string event = 1;
+
+  message Data {
+    string listingId = 1;
+    string productId = 2;
+    string requestId = 3;
+    int64 timestamp = 4;
+  }
+
+  message VisitData {
+    string visitId = 1;
+    repeated Data data = 2;
+  }
+
+  repeated VisitData visitData = 2;
+}

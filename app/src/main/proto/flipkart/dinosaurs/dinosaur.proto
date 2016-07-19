@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package flipkart.dinosaurs;
+
+option java_package = "com.flipkart.dinosaurs";
+
+import "flipkart/geology/period.proto";
+
+message Dinosaur {
+  /** Common name of this dinosaur, like "Stegosaurus". */
+  string name = 1;
+
+  /** URLs with images of this dinosaur. */
+  string picture_urls = 2;
+
+  double length_meters = 3;
+  double mass_kilograms = 4;
+  flipkart.geology.Period period = 5;
+}
